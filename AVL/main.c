@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     AVL *ptNodo;
     Ocorrencia *ocorrencia;
 
-    setlocale(LC_ALL, "pt_BR_utf8"); //para imprimir corretamente na tela os caracteres acentuados
+    setlocale(LC_ALL, "pt_BR"); //para imprimir corretamente na tela os caracteres acentuados
 
     if (argc != 4)
     { //testa se o numero de parametros esperado está correto (deve ser 3): nome do programa (argv[0]), nome do arq de entrada(argv[1]), nome do arq de saida(argv[2])
@@ -89,6 +89,13 @@ int main(int argc, char *argv[])
         }
     }
 
+    //para debug
+    ImprimeArvore(arvore, 0);
+
+    int testeAVL = ehAVL(arvore);
+    printf("é AVL? %d", testeAVL);
+
+    // Escrita dos resultados no arquivo de saída
     fprintf(saida, "\n********** Estatísticas da Indexação **************\n");
     fprintf(saida, "nodos: %d\n", nodos);
     fprintf(saida, "comparações: %d\n", comp_index);

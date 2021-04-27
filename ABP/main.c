@@ -7,7 +7,9 @@ void converte_minuscula(char *s)
 {
     int i;
     for (i = 0; i < strlen(s); i++)
+    {
         s[i] = tolower(s[i]);
+    }
 }
 
 int main(int argc, char *argv[])
@@ -51,7 +53,8 @@ int main(int argc, char *argv[])
     }
 
     while (fgets(linha, MAX_LIN, entrada))
-    {                            //lê cada linha do arquivo texto
+    { //lê cada linha do arquivo texto
+
         id = strtok(linha, ";"); //pega o id do tweet
         id_num = atoi(id);       //converte o id para numérico (vai ser necessário para inserir o id tweet na lista de ocorrências)
 
@@ -88,6 +91,8 @@ int main(int argc, char *argv[])
             fprintf(saida, "consulta: %s Palavra não encontrada\n", linha);
         }
     }
+
+    //ImprimeArvore(arvore, 0);
 
     fprintf(saida, "\n********** Estatísticas da Indexação **************\n");
     fprintf(saida, "nodos: %d\n", nodos);
