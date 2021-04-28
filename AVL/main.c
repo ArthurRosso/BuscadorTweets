@@ -89,12 +89,6 @@ int main(int argc, char *argv[])
         }
     }
 
-    //para debug
-    ImprimeArvore(arvore, 0);
-
-    int testeAVL = ehAVL(arvore);
-    printf("é AVL? %d", testeAVL);
-
     // Escrita dos resultados no arquivo de saída
     fprintf(saida, "\n********** Estatísticas da Indexação **************\n");
     fprintf(saida, "nodos: %d\n", nodos);

@@ -89,25 +89,25 @@ AVL *ConsultaAVL(AVL *a, char *chave, int *comp)
 {
     while (a != NULL)
     {
-        (*comp)++;
-        if (strcmp(a->palavra, chave) == 0)
+        if (strcmp(a->palavra, chave) > 0)
         {
-            return a;
+            (*comp)++;
+            a = a->esq;
+        }
+        else if (strcmp(a->palavra, chave) < 0)
+        {
+            (*comp)+=2;
+            a = a->dir;
         }
         else
         {
-            if (strcmp(a->palavra, chave) > 0)
-            {
-                a = a->esq;
-            }
-            else
-            {
-                a = a->dir;
-            }
+            (*comp)+=2;
+            return a;
         }
     }
     return NULL;
 }
+
 
 AVL *Caso1(AVL *a, int *ok, int *rot)
 {
