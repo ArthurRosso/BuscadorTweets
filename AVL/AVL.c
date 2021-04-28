@@ -18,9 +18,8 @@ AVL *InsereAVL(AVL *a, char *x, int *ok, int *nodos, int *comp, int *rot, int id
     if (a == NULL) // se estamos em uma árvore nula ou em uma folha então inicializa o nodo
     {
         a = InicializaAVL(x);
-        a->ocorrencia = malloc(sizeof(Ocorrencia));
-        a->ocorrencia->id = id;
-        a->ocorrencia->prox = NULL;
+
+        a->ocorrencia = InicializaOcorrencia(id);
 
         *ok = 1;
         (*nodos)++;
@@ -85,9 +84,7 @@ AVL *InsereAVL(AVL *a, char *x, int *ok, int *nodos, int *comp, int *rot, int id
         {
             return a;
         }
-        oco->prox = malloc(sizeof(Ocorrencia));
-        oco->prox->id = id;
-        oco->prox->prox = NULL;
+        oco->prox = InicializaOcorrencia(id);
     }
     return a;
 }
