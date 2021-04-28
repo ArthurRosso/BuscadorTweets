@@ -10,12 +10,12 @@ AVL *InsereAVL(AVL *a, char *x, int *ok, int *nodos, int *comp, int *rot, int id
         a->esq = NULL;
         a->dir = NULL;
         a->fator = 0;
+        *ok = 1;
 
         a->ocorrencia = malloc(sizeof(Ocorrencia));
         a->ocorrencia->id = id;
         a->ocorrencia->prox = NULL;
 
-        *ok = 1;
         (*nodos)++;
         (*comp)++;
     }
@@ -63,6 +63,7 @@ AVL *InsereAVL(AVL *a, char *x, int *ok, int *nodos, int *comp, int *rot, int id
     }
     else
     {
+        *ok=0;
         (*comp) += 3;
         Ocorrencia *oco = a->ocorrencia;
         while (oco->prox != NULL)

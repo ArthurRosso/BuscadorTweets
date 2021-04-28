@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     char separador[] = {" 0123456789,.&*%\?!;/-'@\"$#=~><()][}{:\n\t_"}; //caracteres separadores para as palavras
     int id_num;
 
-    int ok = 0, nodos = 0, comp_index = 0, rot = 0, comp_cons = 0;
+    int ok, nodos = 0, comp_index = 0, rot = 0, comp_cons = 0;
     AVL *arvore = NULL;
     AVL *ptNodo;
     Ocorrencia *ocorrencia;
