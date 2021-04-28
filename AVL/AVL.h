@@ -21,7 +21,7 @@ struct TADAVL
 typedef struct TADAVL AVL;
 
 AVL *InsereAVL(AVL *a, char *x, int *ok, int *nodos, int *comp, int *rot, int id);
-AVL *InicializaAVL(char *x, int *ok);
+AVL *InicializaAVL(char *x);
 AVL *Caso1(AVL *a, int *ok, int *rot);
 AVL *Caso2(AVL *a, int *ok, int *rot);
 AVL *rotacao_direita(AVL *p);
