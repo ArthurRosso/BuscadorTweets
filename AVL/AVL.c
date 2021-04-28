@@ -1,9 +1,21 @@
 #include "AVL.h"
 #include "ocorrencias.h"
 
+/*
+ * Insere um novo nodo em uma árvore AVL
+ *
+ * @param *a        árvore AVL
+ * @param *x        novo nodo
+ * @param *ok       flag que aponta se precisa fazer rotações
+ * @param *nodos    o número de nodos a árvore tem
+ * @param *comp     o número de comparações que já foram feitas na árvore a
+ * @param *rot      o número de rotações que já foram feitas na árvore a
+ * @param id        o id do tweet que estamos
+ * @return          árvore AVL depois da inserção
+ */ 
 AVL *InsereAVL(AVL *a, char *x, int *ok, int *nodos, int *comp, int *rot, int id)
 {
-    if (a == NULL)
+    if (a == NULL) // se estamos em uma árvore nula ou em uma folha então inicializa o nodo
     {
         a = (AVL *)malloc(sizeof(AVL));
         strcpy(a->palavra, x);
@@ -19,8 +31,8 @@ AVL *InsereAVL(AVL *a, char *x, int *ok, int *nodos, int *comp, int *rot, int id
         (*nodos)++;
         (*comp)++;
     }
-    else if (strcmp(x, a->palavra) < 0)
-    { // x < a->palavra
+    else if (strcmp(x, a->palavra) < 0) // se x vem antes do nodo atual na ordem lexicográfica
+    {
         (*comp) += 2;
         a->esq = InsereAVL(a->esq, x, ok, nodos, comp, rot, id);
         if (*ok)
