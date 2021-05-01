@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+#include <ctype.h>
+
 #include "AVL.h"
 #include "ocorrencias.h"
 
@@ -67,7 +73,7 @@ AVL *InsereAVL(AVL *a, char *x, int *ok, int *nodos, int *comp, int *rot, int id
             }
         }
     }
-    else
+    else // então as palavras são iguais
     {
         *ok=0; // não precisam ser feitas mudanças de fator ou rotações
         (*comp) += 3; // como entrou no else, contabiliza três comparações
@@ -112,7 +118,7 @@ AVL *InicializaAVL(char *x)
  * @param *a        árvore AVL
  * @param *chave    palavra que será consultada
  * @param *comp     o número de comparações que já foram feitas na consulta
- * @return          nodo encontrado ou nulo
+ * @return          o nodo encontrado ou nulo
  */ 
 AVL *ConsultaAVL(AVL *a, char *chave, int *comp)
 {
@@ -284,7 +290,6 @@ AVL *rotacao_dupla_esquerda(AVL *p)
  *
  * @param *a        árvore AVL
  * @param nivel     o nivel do nodo que será printado
- * @return          árvore AVL depois da rotação
  */ 
 void ImprimeArvore(AVL *a, int nivel)
 {

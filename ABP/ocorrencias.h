@@ -7,4 +7,6 @@ struct TADOcorrencia {
 };
 typedef struct TADOcorrencia Ocorrencia;
 
+Ocorrencia *InicializaOcorrencia(int id);
+
 #endif // OCORRENCIAS_H_INCLUDED

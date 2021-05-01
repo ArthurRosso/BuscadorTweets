@@ -1,5 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+#include <ctype.h>
+
 #include "AVL.h"
-#include "AVL.c"
+#include "ocorrencias.h"
 
 #define MAX_LIN 300 // tamanho máximo de caracteres de um tweet + números para id
 
@@ -7,7 +13,9 @@ void converte_minuscula(char *s)
 {
     int i;
     for (i = 0; i < strlen(s); i++)
+    {
         s[i] = tolower(s[i]);
+    }
 }
 
 int main(int argc, char *argv[])
@@ -24,7 +32,7 @@ int main(int argc, char *argv[])
     AVL *ptNodo;
     Ocorrencia *ocorrencia;
 
-    setlocale(LC_ALL, "pt_BR"); //para imprimir corretamente na tela os caracteres acentuados
+    setlocale(LC_ALL, "pt_BR"); // para imprimir corretamente na tela os caracteres acentuados
 
     if (argc != 4) // testa se o numero de parametros esperado está correto (deve ser 3): nome do programa (argv[0]), nome do arq de entrada(argv[1]), nome do arq de saida(argv[2])
     { 
@@ -38,7 +46,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    if ((consulta = fopen(argv[2], "r")) == NULL) // testa se consegue abrir o arquivo de entrada
+    if ((consulta = fopen(argv[2], "r")) == NULL) // testa se consegue abrir o arquivo de consulta
     {
         printf("erro ao abrir arquivo %s \n", argv[2]);
         return 1;
