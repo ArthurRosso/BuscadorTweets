@@ -9,6 +9,9 @@
 
 #include "ocorrencias.h"
 
+/*
+ * Estrutura que representa uma árvore AVL
+ */ 
 struct TADAVL
 {
     char palavra[20];
@@ -32,5 +35,6 @@ AVL *rotacao_dupla_esquerda(AVL *p);
 void ImprimeArvore(AVL *a, int nivel);
 int Altura(AVL *a);
 AVL *ConsultaAVL(AVL *a, char *chave, int *comp);
+int EhAVL(AVL *a);
 
 #endif // AVL_H_INCLUDED
