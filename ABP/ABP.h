@@ -7,7 +7,7 @@
  * Estrutura que representa uma árvore ABP
  */ 
 struct TADABP {
-    char palavra[20];
+    char palavra[50];
     struct TADABP *esq;
     struct TADABP *dir;
 

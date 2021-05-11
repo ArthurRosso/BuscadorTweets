@@ -8,7 +8,7 @@
  */ 
 struct TADAVL
 {
-    char palavra[20];
+    char palavra[50];
     int fator;
     struct TADAVL *esq;
     struct TADAVL *dir;

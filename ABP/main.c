@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    while (fgets(linha, 20, consulta)) // lê cada linha do arquivo de consulta
+    while (fgets(linha, 50, consulta)) // lê cada linha do arquivo de consulta
     {
         linha[strlen(linha) - 1] = '\0'; // o fgets por padrão coloca '\n' no final de cada linha, então nós colocamos '\0'
 
@@ -90,7 +90,6 @@ int main(int argc, char *argv[])
                 ocorrencia = ocorrencia->prox;
             } while (ocorrencia != NULL);
             fprintf(saida, "\n");
-            // TODO: destroi ptNodo
         }
         else // se a palvra não estiver na árvore imprime a palavra e que não achou
         {
