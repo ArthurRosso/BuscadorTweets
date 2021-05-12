@@ -3,6 +3,7 @@
 #include <string.h>
 #include <locale.h>
 #include <ctype.h>
+#include <time.h>
 
 #include "AVL.h"
 #include "ocorrencias.h"
@@ -20,6 +21,8 @@ void converte_minuscula(char *s)
 
 int main(int argc, char *argv[])
 {
+    time_t start_t, end_t;
+    double diff_t;
     FILE *entrada;
     FILE *consulta;
     FILE *saida;
@@ -110,6 +113,11 @@ int main(int argc, char *argv[])
     fclose(entrada);
     fclose(consulta);
     fclose(saida);
+
+    time(&end_t);
+    diff_t = difftime(end_t, start_t);
+
+    printf("Execution time = %lf\n", diff_t);
 
     return 0; //retorna 0 para indicar que foi bem sucedido
 }
